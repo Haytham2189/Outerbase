@@ -20,7 +20,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-
+isolation: isolate;
   z-index: 1000;
   overflow: visible;
   
@@ -347,7 +347,7 @@ background: linear-gradient(
   pointer-events: none;
 
   transition: all 0.2s ease;
-  z-index: 100;
+  z-index: 1100;
 }
 .dropdown::before{
     content:"";
@@ -360,17 +360,29 @@ background: linear-gradient(
     z-index: -1;
     user-select: none;
 }
-.nav-item:hover::after{
-content:"";
-background-color: rgba(0, 0, 0, 0.3);
-backdrop-filter: blur(30px);
-position: fixed;
-height: 100vh;
-width: 100vw;
-top: 0;
-left: 0;
-z-index: -10;
+.navbar::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.3);
+
+  backdrop-filter: blur(30px);
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+
+  pointer-events: none;
+
+  z-index: -1;
 }
+
+.navbar:has(.nav-item:hover)::before {
+  opacity: 1;
+}
+
 .nav-item:hover .dropdown,
 .dropdown:hover {
   opacity: 1;
