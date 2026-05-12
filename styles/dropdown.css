@@ -1,0 +1,164 @@
+/* ================= DROPDOWN BASE ================= */
+
+.dropdown {
+  position: absolute;
+
+  top: 100%;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(10px);
+
+  min-width: 200px;
+  max-width: 700px;
+  width: max-content;
+
+  padding: 20px;
+
+  background: #0d0d0d;
+  border-radius: 16px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all 0.2s ease;
+
+  z-index: 100;
+}
+
+/* SHOW DROPDOWN */
+
+.nav-item:hover .dropdown,
+.dropdown:hover {
+  opacity: 1;
+  pointer-events: auto;
+
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ================= DROPDOWN CONTENT ================= */
+
+.dropdown-content {
+  display: grid;
+  gap: 16px;
+
+  padding: 16px;
+
+  background: #0d0d0d;
+  border-radius: 16px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* ================= FEATURES LAYOUT ================= */
+
+.dropdown-features .dropdown-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  height: 520px;
+
+  align-items: stretch;
+}
+
+/* LEFT COLUMN */
+
+.dropdown-left {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  height: 100%;
+  flex: 1;
+}
+
+/* DROPDOWN ITEM */
+
+.dropdown-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+  flex: 1;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+
+  transition: all 0.2s ease;
+
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.15);
+
+  transform: translateY(-2px);
+}
+
+/* DROPDOWN ITEM TEXT */
+
+.dropdown-item h4 {
+  font-size: 14px;
+  font-weight: 600;
+
+  color: white;
+}
+
+.dropdown-item p {
+  font-size: 12px;
+  line-height: 1.4;
+
+  color: rgba(255,255,255,0.6);
+}
+
+/* CARDS WRAPPER */
+
+.dropdown-cards {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  height: 100%;
+}
+
+/* DROPDOWN CARD */
+
+.dropdown-card {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 10px;
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.03);
+
+  transition: all 0.2s ease;
+
+  cursor: pointer;
+}
+
+.dropdown-card:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+/* CARD IMAGE */
+
+.dropdown-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+}

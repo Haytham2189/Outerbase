@@ -1,0 +1,632 @@
+
+/* ================= RESET ================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= GLOBAL ================= */
+body {
+  font-family: sans-serif;
+  background: black;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 1000;
+  overflow: visible;
+  
+}
+
+.nav-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 20px 80px;
+  max-width: 1300px;
+  margin: auto;
+  position: relative;
+}
+
+/* LEFT */
+.logo {
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* CENTER */
+.nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-center a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-center a:hover {
+  color: white;
+}
+
+/* RIGHT */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-login {
+  background: none;
+  border: none;
+  color: white;
+}
+
+.btn-github {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: white;
+  border: none;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  background: url("../assets/images/Galaxy-background.webp") center / cover no-repeat;
+}
+
+/* OVERLAY */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.45) 40%,
+    rgba(0, 0, 0, 0.1) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  z-index: 1;
+}
+
+/* HERO INNER */
+.hero-inner {
+  padding: 120px 0 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* GRID */
+.hero-container {
+  display: grid;
+ grid-template-columns: 1fr 1fr;
+  width: 100%;
+  padding: 0 80px;
+max-width: 1300px;
+margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= CONTENT ================= */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 600px;
+  color: white;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= BADGE ================= */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+justify-content: space-between;
+  height: 36px;
+  padding: 0 14px;
+max-width: 230px;
+  border-radius: 9999px;
+
+  background: #262626;
+  color: #E5E5E5;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.3px;
+
+  text-decoration: none;
+
+  margin-bottom: 56px;
+    position: relative;
+  overflow: hidden;
+
+ 
+}
+
+.badge:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.badge-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transform: translateY(1px);
+  
+}
+
+/* ================= H1 ================= */
+.hero-text h1 {
+  font-size: 80px;
+  line-height: 80px;
+  font-weight: 800;
+letter-spacing: -2.5px;
+  margin-bottom: 24px;
+
+ 
+
+  max-width: 900px;
+  width: 880px;
+}
+
+/* ================= PARAGRAPH ================= */
+.hero-text p {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  letter-spacing: 0px;
+
+  max-width: 1280px;
+  max-height: 84px;
+
+  color: #F5F5F5;
+}
+
+/* ================= BUTTONS ================= */
+.cta {
+  width: fit-content;
+  padding: 12px 20px;
+  border-radius: 999px;
+
+  border: none;
+  background: white;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+
+  cursor: pointer;
+}
+
+/* ================= VISUAL ================= */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible; 
+}
+
+.satellite {
+  width: 380px; 
+  height: auto;
+
+  transform: translateX(60px); 
+  animation: satelliteFloat 10s ease-in-out infinite;
+}
+/* ================= VIDEO ================= */
+.preview-section {
+  background: black;
+  padding: 60px 0 80px;
+}
+
+.hero-preview {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-preview video {
+  width: 80%;
+  max-width: 1300px;
+  border-radius: 20px;
+  display: block;
+}
+/* ==================== ANIMATION==============*/
+@keyframes satelliteFloat {
+  0% {
+    transform: translateX(80px) translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateX(90px) translateY(-12px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateX(80px) translateY(-20px) rotate(1deg);
+  }
+  75% {
+    transform: translateX(70px) translateY(-10px) rotate(0.5deg);
+  }
+  100% {
+    transform: translateX(80px) translateY(0px) rotate(0deg);
+  }
+}
+.badge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: 9999px;
+
+  padding: 1.5px; /* épaisseur du border */
+
+background: linear-gradient(
+  90deg,
+  transparent 0%,
+  transparent 45%,
+  rgba(255,255,255,1) 50%,
+  transparent 55%,
+  transparent 100%
+);
+
+  background-size: 200% 100%;
+
+  animation: borderMove 8s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+@keyframes borderMove {
+  0% {
+    background-position: 150% 0;
+  }
+  100% {
+    background-position: -150% 0;
+  }
+}   
+ 
+
+/*===========================NavBar====================*/
+
+
+
+/* 🔥 CRUCIAL */
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+   
+   z-index: 1; 
+}
+.nav-item a {
+  display: flex;
+  align-items: center;
+}
+/*========================== DROPDOWN BASE =================*/
+
+.dropdown {
+  position: absolute;
+  top: 100%; /* juste en dessous du lien */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+
+
+  width: max-content;
+
+  background: #0d0d0d;
+  border-radius: 16px;
+  padding: 20px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all 0.2s ease;
+  z-index: 100;
+}
+.dropdown::before{
+    content:"";
+    height: 100px;
+    width: 100%;
+  
+    display: flex;
+    position:absolute;
+    transform: translateY(-50%);
+    z-index: -1;
+    user-select: none;
+}
+.nav-item:hover::after{
+content:"";
+background-color: rgba(0, 0, 0, 0.3);
+backdrop-filter: blur(30px);
+position: fixed;
+height: 100vh;
+width: 100vw;
+top: 0;
+left: 0;
+z-index: -10;
+}
+.nav-item:hover .dropdown,
+.dropdown:hover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+
+/*========================== CONTENT =================*/
+
+.dropdown-content {
+  display: grid;
+
+
+ gap: 8px;
+
+ 
+}
+.dropdown-column .dropdown-card {
+  flex: 1;
+}
+
+/*========================== NAV =================*/
+
+
+
+
+
+/*========================== FEATURES =================*/
+
+.dropdown-features .dropdown-content{
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 450px;
+}
+.dropdown-features{
+   width: 850px; 
+   
+}
+/* LEFT COLUMN */
+
+.dropdown-column {
+  display: flex;
+  flex-direction: column;
+justify-content: space-between;
+  gap: 8px;
+
+  height: 100%;
+}
+
+/*========================== Solutions =================*/
+
+.dropdown-solutions .dropdown-content{
+    grid-template-columns: 1fr 1fr ;
+}
+.dropdown-solutions{
+    width: 800px;
+    min-height: 260px;
+}
+/*========================== DEVELOPERS =================*/
+.dropdown-developers .dropdown-content{
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+
+}
+.dropdown-features .dropdown-column{
+    justify-content: space-between;
+}
+.dropdown-developers{
+     width: 750px;
+     min-height: 450px;
+}
+.dropdown-developers .dropdown-card {
+  min-height: 420px;
+}
+.dropdown-developers .dropdown-card img{
+    height: 100%;
+min-height: 320px;
+}
+
+/*========================== COMPANY =================*/
+
+.dropdown-company .dropdown-content{
+    grid-template-columns:  1fr 1fr;
+     min-height: 260px;
+}
+.dropdown-company{
+  width: 680px;
+ 
+}
+.dropdown-company .dropdown-column:last-child {
+  justify-content: space-between;
+}
+.small-card {
+  min-height: 220px;
+}
+.dropdown-company .dropdown-item {
+  min-height: 120px;
+}
+
+/* ITEMS */
+
+.dropdown-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+
+  padding: 12px;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  flex: 1;
+}
+
+.dropdown-item:hover {
+  background: rgba(255,255,255,0.05);
+
+  border-color: rgba(255,255,255,0.12);
+
+  transform: translateY(-2px);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+
+  padding: 6px;
+  border-radius: 8px;
+
+  background: white;
+box-shadow:
+  inset 0 1px 1px rgba(255,255,255,0.08),
+  0 4px 12px rgba(0,0,0,0.25);
+  flex-shrink: 0;
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.dropdown-item h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.dropdown-item p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+
+
+
+/* CARDS */
+
+.dropdown-card {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+
+
+  transition:
+  transform 0.25s ease,
+  background 0.25s ease;
+  cursor: pointer;
+  position: relative;
+overflow: hidden;
+isolation: isolate;
+}
+.dropdown-card::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85) 0%,
+    rgba(0,0,0,0.35) 40%,
+    rgba(0,0,0,0) 70%
+  );
+
+  z-index: 1;
+}
+
+.dropdown-card:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-4px);
+}
+.item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* IMAGE */
+
+.dropdown-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+  display: block;
+  transition: transform 0.4s ease;
+}
+.dropdown-card:hover img {
+  transform: scale(1.03);
+}
+/* TEXT */
+.card-content {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 24px;
+
+  z-index: 2;
+}
+
+.card-content h4 {
+  color: white;
+  font-size: 14px;
+}
+
+.card-content p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+}
+
+
+.nav-item:hover .dropdown,
+.dropdown:hover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+
+
+
+
+
+
