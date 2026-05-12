@@ -85,7 +85,7 @@ isolation: isolate;
 /* ================= HERO ================= */
 .hero {
   position: relative;
-  background: url("../assets/images/Galaxy-background.webp") center / cover no-repeat;
+  background: url("./assets/images/Galaxy-background.webp") center / cover no-repeat;
 }
 
 /* OVERLAY */
